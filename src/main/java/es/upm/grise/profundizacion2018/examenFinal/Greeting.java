@@ -2,23 +2,26 @@ package es.upm.grise.profundizacion2018.examenFinal;
 
 public class Greeting {
 	
-	int hour;
+	MyCalendar myCalendar; 
+	Message message;
 	
-	public int getHour() {
-		return hour;
+
+
+	public Greeting(MyCalendar myCalendar, Message message) {
+		super();
+		this.myCalendar = myCalendar;
+		this.message = message;
 	}
 
-	public void setHour(int hour) {
-		this.hour = hour;
-	}
+
 
 	public String getGreeting( Language language ) {
 		// Get current hour
-		this.setHour(new MyCalendar().getHour());
+		int hour = this.myCalendar.getHour();
 		
 		// Find out the greeting language
 		if ( language == null )
-			language = Message.getDefaultLanguage();
+			language = message.getDefaultLanguage();
 		
 		// Get the moment of the day
 		TimeOfTheDay moment;
@@ -30,7 +33,7 @@ public class Greeting {
 			moment = TimeOfTheDay.EVENING;
 			
 		// Return the message		
-		return Message.getMessage( moment, language );
+		return message.getMessage( moment, language );
 	}
 
 }
