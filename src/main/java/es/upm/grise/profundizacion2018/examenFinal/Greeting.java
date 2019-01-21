@@ -2,9 +2,19 @@ package es.upm.grise.profundizacion2018.examenFinal;
 
 public class Greeting {
 	
+	int hour;
+	
+	public int getHour() {
+		return hour;
+	}
+
+	public void setHour(int hour) {
+		this.hour = hour;
+	}
+
 	public String getGreeting( Language language ) {
 		// Get current hour
-		int hour = new MyCalendar().getHour();
+		this.setHour(new MyCalendar().getHour());
 		
 		// Find out the greeting language
 		if ( language == null )
