@@ -17,7 +17,6 @@ public class GreetingTest {
 	@Mock Message mockMessage;
 	@Mock MyCalendar mockCalendar;
 
-
 	@Before
 	public void init() {
 		MockitoAnnotations.initMocks(this);
@@ -54,6 +53,6 @@ public class GreetingTest {
 	@Test
 	public void smokeTest3() {
 		then(this.greeting.getGreeting(Language.SPANISH)).isEqualTo("Buenos días");
-	}
+	}	
 
 }
